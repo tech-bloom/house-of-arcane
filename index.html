@@ -17,7 +17,7 @@
       </label>
       <ul>
         <li><a class="active" href="#">home</a>
-            <li><a href="#">about</a>
+            <li><a href="about.html">about</a>
             <li><a href="#">contact</a>
             <li><a href="#">rules</a>
             <li><a href="#">safeguarding</a>
@@ -27,6 +27,63 @@
             </li>
       </ul>
     </nav>
+
+    <div class="slideshow-container">
+        <div class="slideshow">
+        <img src="homeimg1.JPG" alt="Image 1">
+        <img src="homeimg2.JPG" alt="Image 2">
+        <img src="homeimg3.JPG" alt="Image 3">
+        </div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+        </div>
+        <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+            showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+            showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("slideshow")[0].getElementsByTagName("img");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+            slideIndex = 1;
+            }
+            if (n < 1) {
+            slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            }
+            
+            document.getElementsByClassName("prev")[0].addEventListener("click", function() {
+            plusSlides(-1);
+            });
+            
+            document.getElementsByClassName("next")[0].addEventListener("click", function() {
+            plusSlides(1);
+            });
+            </script>         
     <section></section>
   </body>
 </html>
