@@ -131,6 +131,7 @@
     max-width: 800px;
     margin: 0 auto;
     margin-top: 0px;
+    z-index: -1;
     }
     
     .slideshow {
