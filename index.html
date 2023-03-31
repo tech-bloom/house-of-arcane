@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home | House Of Arcane</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+    <img src="hoa.png" class="logo">
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a class="active" href="#">home</a>
+            <li><a href="about.html">about</a>
+            <li><a href="#">contact</a>
+            <li><a href="#">rules</a>
+            <li><a href="#">safeguarding</a>
+            <li><a href="#">gallery</a>
+            <li><a href="#">testimonials</a>
+            <li><a href="#">faq's</a>
+            </li>
+      </ul>
+    </nav>
+
+    <div class="slideshow-container">
+        <div class="slideshow">
+        <img src="homeimg1.JPG" alt="Image 1">
+        <img src="homeimg2.JPG" alt="Image 2">
+        <img src="homeimg3.JPG" alt="Image 3">
+        </div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+        </div>
+        <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+            showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+            showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("slideshow")[0].getElementsByTagName("img");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+            slideIndex = 1;
+            }
+            if (n < 1) {
+            slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            }
+            
+            document.getElementsByClassName("prev")[0].addEventListener("click", function() {
+            plusSlides(-1);
+            });
+            
+            document.getElementsByClassName("next")[0].addEventListener("click", function() {
+            plusSlides(1);
+            });
+            </script>         
+    <section></section>
+  </body>
+</html>
