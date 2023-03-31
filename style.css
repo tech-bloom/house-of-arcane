@@ -49,6 +49,7 @@
   nav ul{
     float: right;
     margin-right: 320px;
+    z-index: 2;
 
   }
   nav ul li{
